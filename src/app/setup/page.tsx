@@ -35,13 +35,9 @@ export default function Setup() {
       if (!response.ok) {
         throw new Error("Failed to save setup");
       }
-
-      // Đợi router refresh để cập nhật trạng thái
-      router.refresh();
-      // Đợi một chút để đảm bảo dữ liệu đã được cập nhật
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      // Chuyển trang
-      await router.push("/");
+      setTimeout(() => {
+        router.push("/");
+      }, 500);
     } catch (error) {
       console.error("Setup error:", error);
     }
@@ -71,12 +67,16 @@ export default function Setup() {
                 <input
                   type="date"
                   id="startDate"
-                  {...register("startDate", { required: "Vui lòng chọn ngày bắt đầu" })}
+                  {...register("startDate", {
+                    required: "Vui lòng chọn ngày bắt đầu",
+                  })}
                   className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-800/50 border border-slate-600 text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
               </div>
               {errors.startDate && (
-                <p className="mt-1 text-sm text-red-400">{errors.startDate.message}</p>
+                <p className="mt-1 text-sm text-red-400">
+                  {errors.startDate.message}
+                </p>
               )}
             </div>
 
@@ -92,12 +92,16 @@ export default function Setup() {
                 <input
                   type="date"
                   id="endDate"
-                  {...register("endDate", { required: "Vui lòng chọn ngày kết thúc" })}
+                  {...register("endDate", {
+                    required: "Vui lòng chọn ngày kết thúc",
+                  })}
                   className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-800/50 border border-slate-600 text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
               </div>
               {errors.endDate && (
-                <p className="mt-1 text-sm text-red-400">{errors.endDate.message}</p>
+                <p className="mt-1 text-sm text-red-400">
+                  {errors.endDate.message}
+                </p>
               )}
             </div>
 
@@ -118,7 +122,9 @@ export default function Setup() {
                     validate: {
                       min: (value) => {
                         const num = parseInt(value.replace(/,/g, ""));
-                        return num >= 1000000 || "Số tiền tối thiểu là 1,000,000 VND";
+                        return (
+                          num >= 1000000 || "Số tiền tối thiểu là 1,000,000 VND"
+                        );
                       },
                     },
                   }}
@@ -136,7 +142,9 @@ export default function Setup() {
                 />
               </div>
               {errors.targetAmount && (
-                <p className="mt-1 text-sm text-red-400">{errors.targetAmount.message}</p>
+                <p className="mt-1 text-sm text-red-400">
+                  {errors.targetAmount.message}
+                </p>
               )}
             </div>
 
