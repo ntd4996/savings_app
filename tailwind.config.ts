@@ -12,6 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      height: {
+        "content-plan": "calc(100vh - 310px)",
+      },
+      maxHeight: {
+        "content-plan": "calc(100vh - 310px)",
+      },
     },
   },
   plugins: [],

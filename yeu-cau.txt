@@ -1,0 +1,59 @@
+Yêu cầu cho Cursor AI:
+
+Tôi muốn xây dựng một ứng dụng hiển thị số tiền cần tiết kiệm mỗi ngày từ hôm nay đến ngày 31/11 năm nay để đạt được mục tiêu tiết kiệm 100 triệu VNĐ. Ứng dụng sẽ sử dụng phương pháp tiết kiệm lũy tiến, nghĩa là số tiền tiết kiệm mỗi ngày sẽ tăng dần theo thời gian.
+
+Yêu cầu chi tiết:
+Ngôn ngữ và Framework: Sử dụng ReactJS hoặc NextJS.
+
+Chức năng chính:
+
+Tính toán số ngày từ hôm nay đến ngày 31/11 năm nay.
+
+Tính toán số tiền cần tiết kiệm mỗi ngày theo phương pháp lũy tiến.
+
+Hiển thị số tiền cần tiết kiệm mỗi ngày và tổng số tiền đã tiết kiệm được.
+
+Phương pháp tiết kiệm lũy tiến:
+
+Số tiền tiết kiệm mỗi ngày sẽ tăng dần theo công thức:
+Số tiền ngày thứ n = Số tiền ngày thứ (n-1) + K
+Trong đó, K là một hằng số được tính toán sao cho tổng số tiền tiết kiệm sau tất cả các ngày đạt đúng 100 triệu VNĐ.
+
+Giao diện:
+
+Hiển thị ngày bắt đầu và ngày kết thúc.
+
+Hiển thị số tiền cần tiết kiệm mỗi ngày.
+
+Hiển thị tổng số tiền đã tiết kiệm được tính đến ngày hiện tại.
+
+Có nút "Reset" để thiết lập lại từ đầu.
+
+Xử lý ngày tháng:
+
+Sử dụng thư viện date-fns hoặc moment.js để xử lý ngày tháng.
+
+Styling:
+
+Sử dụng CSS module hoặc TailwindCSS để tạo giao diện đẹp mắt.
+
+Ví dụ đầu vào và đầu ra:
+Ngày hôm nay: 01/10/2023
+
+Ngày kết thúc: 31/11/2023
+
+Số ngày còn lại: 61 ngày
+
+Mục tiêu tiết kiệm: 100,000,000 VNĐ
+
+Kết quả:
+
+Ngày 1: Tiết kiệm X VNĐ
+
+Ngày 2: Tiết kiệm X + K VNĐ
+
+...
+
+Ngày 61: Tiết kiệm X + (60 * K) VNĐ
+
+Tổng số tiền sau 61 ngày: 100,000,000 VNĐ
