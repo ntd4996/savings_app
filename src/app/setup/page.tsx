@@ -1,7 +1,6 @@
 "use client";
 
 import { useForm, Controller } from "react-hook-form";
-import { useRouter } from "next/navigation";
 import { FaCalendarAlt, FaMoneyBillWave } from "react-icons/fa";
 import { NumericFormat } from "react-number-format";
 
@@ -18,7 +17,6 @@ export default function Setup() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<SetupForm>();
-  const router = useRouter();
 
   const onSubmit = async (data: SetupForm) => {
     try {
@@ -36,7 +34,7 @@ export default function Setup() {
         throw new Error("Failed to save setup");
       }
       setTimeout(() => {
-        router.push("/");
+        window.location.href = "/";
       }, 500);
     } catch (error) {
       console.error("Setup error:", error);
